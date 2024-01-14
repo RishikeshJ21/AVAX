@@ -1,0 +1,20 @@
+//SPDX-License-Identifier: MIT
+pragma solidity = 0.8.23;
+
+contract RenamedErrors {
+    uint256 publicVariable = 1;
+
+    function requireFunction(uint256 _input) public pure {
+        require(_input > 200, "Input must be greater than 200"); // Checks if the input is greater than 200 using the require statement.
+    }
+
+    function assertFunction() public view {
+        assert(publicVariable == 0); //It takes only one parameter
+    }
+
+    function revertFunction(uint256 _input) public pure {
+        if (_input < 300) {
+            revert("Input must be greater than 300");   //  Reverts the transaction with an error message if the input is less than 300.
+        }
+    }
+}
